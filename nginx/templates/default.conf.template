@@ -1,0 +1,12 @@
+http {
+    server {
+        listen          ${NGINX_PORT};
+        server_name     ${NGINX_HOST};
+        root            /app/public_html/www.example.com;
+        charset         UTF-8
+
+        location / {
+            
+        }
+    }
+}

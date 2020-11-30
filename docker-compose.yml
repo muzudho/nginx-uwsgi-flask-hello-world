@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./frontend
+
+    # 起動しっぱなしにします。
+    tty: true
+    # 起動させ続ける Hack です。
+    command: bash -c "bash /usr/local/bin/docker-entrypoint.sh && /bin/bash"
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./nginx/templates:/etc/nginx/templates
+    expose:
+      - 8080
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
