@@ -1,12 +1,13 @@
+# Is not work.
 http {
     server {
         listen          ${NGINX_PORT};
         server_name     ${NGINX_HOST};
-        root            /app/public_html/www.example.com;
+        root            /app;
         charset         UTF-8
 
         location / {
-            
+
         }
     }
 }
