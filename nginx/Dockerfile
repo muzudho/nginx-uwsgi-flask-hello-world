@@ -1,10 +1,11 @@
-FROM ubuntu:20.10
+# FROM ubuntu:20.10
+FROM nginx:1.18
 
-RUN apt-get update && apt-get install -y \
-    nginx
+# RUN apt-get update && apt-get install -y \
+#     nginx
 
 # 設定ファイル
-COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
+COPY ./conf/app.conf /etc/nginx/conf.d/app.conf
 
 # ドキュメント・ルート
 COPY ./app/index.html /app/index.html
