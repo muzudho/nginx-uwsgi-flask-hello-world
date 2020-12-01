@@ -19,9 +19,9 @@ services:
     # 起動しっぱなしにします。
     tty: true
     expose:
-      - 8080
+      - 9090
     ports:
-      - "8080:80"
+      - "9090:9090"
     depends_on:
       # frontend のあとに nginx をビルドします。
       - frontend

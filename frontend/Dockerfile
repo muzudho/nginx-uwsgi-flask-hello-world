@@ -7,6 +7,12 @@ LABEL maintainer="muzudho1@gmail.com"
 
 # Dockerfile ではまず root ユーザーで全体をざっくり環境構築して、必要なら後付けでユーザー設定してください。
 
+# .pid ファイルを置くところ。
+WORKDIR /usr/local/var/run
+
+# ログ・ファイルを置くところ。
+WORKDIR /usr/local/var/log
+
 RUN apt-get update && apt-get install -y \
     # `gcc` - なぜか flaskパッケージが C コンパイラーを欲しがるんだぜ☆（＾～＾）
     gcc \
