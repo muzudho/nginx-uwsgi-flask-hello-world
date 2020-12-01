@@ -6,8 +6,6 @@ services:
     tty: true
     # 起動させ続ける Hack です。
     command: bash -c "bash /usr/local/bin/docker-entrypoint.sh && /bin/bash"
-    expose:
-      - 3000
     ports:
       - "3000:3000"
     networks:
@@ -16,12 +14,10 @@ services:
 
   nginx:
     build: ./nginx
-    # 起動しっぱなしにします。
-    tty: true
     expose:
-      - 9090
+      - 80
     ports:
-      - "9090:9090"
+      - "80:80"
     depends_on:
       # frontend のあとに nginx をビルドします。
       - frontend
