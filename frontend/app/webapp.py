@@ -1,12 +1,5 @@
-# from module.app import get_app
-
-# app = get_app()
-
 from flask import Flask
 app = Flask(__name__)
-
-def get_app():
-    return app
 
 @app.route('/')
 def hello():
@@ -18,6 +11,6 @@ def good():
     name = "Good"
     return name
 
-## おまじない
+# メイン・プログラムとして走らせるとき。
 if __name__ == "__main__":
     app.run(debug=True)
